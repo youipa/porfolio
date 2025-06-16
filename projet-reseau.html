@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet SAE 12 - Configuration Réseau d'Entreprise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        header {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #005a9c;
+            margin: 0;
+        }
+        /* Bouton Accueil en haut à droite */
+        .btn-accueil {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 8px 15px;
+            background-color: #005a9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-accueil:hover {
+            background-color: #003f6b;
+        }
+        .projet-image {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .projet-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        section {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+        }
+        .tech-tags {
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            display: inline-block;
+            background-color: #005a9c;
+            color: white;
+            padding: 5px 12px;
+            margin: 5px 8px 0 0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projet SAE 12 - Configuration réseau d'entreprise</h1>
+        <a href="index.html" class="btn-accueil">← Accueil</a>
+    </header>
+
+    <section>
+        <h2>Contexte et objectifs</h2>
+        <p>
+            La SAE 12 est un projet clé réalisé en début d'année dans le cadre du BUT Réseaux et Télécommunications.  
+            Il s'agit de concevoir, configurer et tester un réseau informatique complet destiné à une entreprise fictive, avec des besoins spécifiques de segmentation, de sécurité et de gestion des ressources.  
+            L'objectif principal est de développer des compétences pratiques en administration réseau, en mettant en œuvre des VLANs, du routage inter-VLAN, et des services réseau essentiels.
+        </p>
+    </section>
+
+    <section>
+        <h2>Architecture et topologie du réseau</h2>
+        <p>
+            La topologie choisie comprend plusieurs commutateurs (switches) connectés entre eux, avec un switch de niveau 3 qui est lui meme connecter a un routeur en theorie un acces internet vers la box.   
+            Cette segmentation permet d’isoler les flux et d’améliorer la sécurité et la performance du réseau.  
+            Le plan d’adressage IP est structuré et attribué à chaque VLAN de manière claire et cohérente.
+        </p>
+        <div class="projet-image">
+            <img src="C:\Users\Nathan\Documents\portfolio\logiqueSAE12.png" alt="Topologie réseau d'entreprise" />
+            <p style="font-size: 0.9rem; color: #666;">Schéma de la topologie réseau réalisée</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Configuration et protocoles utilisés</h2>
+        <p>
+            Le projet a impliqué la configuration des VLANs sur les commutateurs Cisco, ainsi que la mise en place d’un routage inter-VLAN sur le switch L3 pour permettre la communication contrôlée entre les différents départements.  
+            Le protocole OSPF a été configuré pour la gestion dynamique des routes internes.  
+            J’ai également mis en place des listes de contrôle d’accès (ACL) pour restreindre certains trafics non autorisés entre les VLANs, renforçant ainsi la sécurité du réseau.
+        </p>
+        <p>
+            Un serveur DHCP a été configuré pour distribuer automatiquement les adresses IP aux postes clients, simplifiant la gestion du réseau et évitant les conflits d’adresses.
+        </p>
+    </section>
+
+    <section>
+        <h2>Difficultés rencontrées et solutions</h2>
+        <p>
+            Parmi les principales difficultés, la compréhension et la mise en œuvre du routage inter-VLAN ont demandé une attention particulière, notamment pour configurer correctement les interfaces VLAN et assurer la communication entre VLANs.  
+            La configuration des ACL a également nécessité plusieurs tests pour obtenir les règles adaptées sans bloquer le trafic nécessaire.  
+            Grâce à ces défis, j’ai renforcé ma capacité à analyser des problèmes réseau et à appliquer des solutions efficaces.
+        </p>
+    </section>
+
+    <section>
+        <h2>Compétences développées</h2>
+        <ul>
+            <li>Conception et segmentation réseau avec VLANs</li>
+            <li>Configuration de commutateurs Cisco et routage inter-VLAN</li>
+            <li>Mise en place de protocoles de routage (OSPF)</li>
+            <li>Gestion des services réseau (DHCP)</li>
+            <li>Application de règles de sécurité via ACL</li>
+            <li>Diagnostic et résolution de problèmes réseau</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Technologies utilisées</h2>
+        <div class="tech-tags">
+            <span class="tech-tag">Cisco Packet Tracer</span>
+            <span class="tech-tag">VLAN</span>
+            <span class="tech-tag">Routage Inter-VLAN</span>
+            <span class="tech-tag">OSPF</span>
+            <span class="tech-tag">ACL</span>
+            <span class="tech-tag">DHCP</span>
+        </div>
+    </section>
+</body>
+</html>

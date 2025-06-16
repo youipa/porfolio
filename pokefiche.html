@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet SAE 15 - Analyse des données Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        header {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #005a9c;
+            margin: 0;
+        }
+        /* Bouton Accueil en haut à droite */
+        .btn-accueil {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 8px 15px;
+            background-color: #005a9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-accueil:hover {
+            background-color: #003f6b;
+        }
+        section {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+        }
+        .tech-tags {
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            display: inline-block;
+            background-color: #005a9c;
+            color: white;
+            padding: 5px 12px;
+            margin: 5px 8px 0 0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projet SAE 15 - Analyse et traitement des données Pokémon</h1>
+        <a href="index.html" class="btn-accueil">← Accueil</a>
+    </header>
+
+    <section>
+        <h2>Contexte et objectifs</h2>
+        <p>
+            La SAE 15 consiste à développer un programme Python permettant de récupérer, analyser et présenter des données sur les Pokémon via l'API PokéAPI.  
+            L'objectif principal est de pratiquer la récupération de données à distance, leur mise en cache pour optimiser les performances,  
+            la manipulation des données JSON, ainsi que la génération de rapports en Markdown et HTML.  
+            Ce projet met en avant la gestion d'API, le traitement des données, et la création d'un rendu visuel pour faciliter l'interprétation des résultats.
+        </p>
+    </section>
+
+    <section>
+        <h2>Description du projet</h2>
+        <p>
+            Le programme interroge l'API PokéAPI pour récupérer la liste complète des Pokémon, puis obtient des détails tels que la taille et les types de chaque Pokémon.  
+            Les types sont traduits en français à l'aide des données fournies par l'API, et un cache local est utilisé pour éviter de multiples requêtes répétées.  
+            Ensuite, des statistiques sont calculées, comme le nombre de Pokémon par type et la taille moyenne par type.  
+            Enfin, un rapport complet est généré au format Markdown, puis converti en page HTML lisible et stylée.
+        </p>
+    </section>
+
+    <section>
+        <h2>Extrait du code principal</h2>
+        <pre><code>def principal():
+    print("Téléchargement des données des Pokémon...")
+    pokemons = recuperer_pokemons()
+    print(f"{len(pokemons)} Pokémon téléchargés.")
+
+    print("Calcul des types...")
+    compte_types = compter_types(pokemons)
+    moyennes_tailles = taille_moyenne(pokemons)
+    classement_tailles = trier_par_taille(moyennes_tailles)
+
+    print("Génération du rapport...")
+    generer_rapport(compte_types, classement_tailles, "rapport_types_complet.md", "rapport_types_complet.html")
+    print("Rapport généré avec succès.")
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Difficultés rencontrées</h2>
+        <p>
+            La gestion de la pagination de l'API et la mise en cache des résultats ont nécessité une attention particulière pour éviter trop de requêtes et garantir la performance.  
+            La traduction des types Pokémon en français à partir des données multilingues a également demandé une logique précise.  
+            De plus, la génération d'un rapport clair et esthétiquement agréable a impliqué l'utilisation de la conversion Markdown vers HTML avec du style CSS.
+        </p>
+    </section>
+
+    <section>
+        <h2>Compétences développées</h2>
+        <ul>
+            <li>Interrogation et gestion d'API REST avec Python (requests)</li>
+            <li>Manipulation avancée de données JSON</li>
+            <li>Implémentation d'un système de cache local</li>
+            <li>Traitement de données et calcul de statistiques</li>
+            <li>Génération de rapports Markdown et conversion en HTML</li>
+            <li>Utilisation de bibliothèques externes (markdown)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Technologies utilisées</h2>
+        <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Requests</span>
+            <span class="tech-tag">JSON</span>
+            <span class="tech-tag">Markdown</span>
+            <span class="tech-tag">PokéAPI</span>
+            <span class="tech-tag">HTML & CSS</span>
+        </div>
+    </section>
+</body>
+</html>
